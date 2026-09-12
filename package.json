@@ -1,0 +1,10 @@
+{
+  "name": "musicdna-encoder-test-tools",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Test tooling only. Verovio is the reference implementation of Plaine & Easie and the independent reader that checks our encoder; its Python wheels are built without the PAE importer, so the reader is reached through Node. Nothing here ships in the Python package. Run `npm install`, then pytest picks the round trip up.",
+  "license": "MIT",
+  "devDependencies": {
+    "verovio": "6.2.0"
+  }
+}

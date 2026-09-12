@@ -1,0 +1,2 @@
+# Keep Python source byte-stable across platforms for reproducible builds.
+*.py text eol=lf

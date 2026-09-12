@@ -1,0 +1,10 @@
+MusicDNA Encoder — third-party notices
+===========================================
+
+No third-party source code is vendored in this repository. The runtime package
+contains MusicDNA's own encoding and Plaine & Easie code and has no third-party
+runtime dependencies.
+
+Verovio is used by the test/conformance workflow as an external reference reader;
+it is declared in package.json, installed by CI and is not redistributed by the
+Python package.

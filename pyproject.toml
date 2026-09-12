@@ -1,0 +1,81 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "musicdna-encoder"
+version = "0.9.0"
+description = "Experimental deterministic encoder for MusicDNA event and analysis contracts"
+readme = "README.rst"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.txt"]
+authors = [
+  { name = "Anna Neovesky" },
+  { name = "Finn Johann Romeis" },
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/dh-erfurt/MusicDNA-Encoder"
+Repository = "https://github.com/dh-erfurt/MusicDNA-Encoder"
+Issues = "https://github.com/dh-erfurt/MusicDNA-Encoder/issues"
+
+[project.scripts]
+musicdna-encoder = "musicdna_encoder.encoder:main"
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.2",
+  "mypy>=1.10",
+  "pytest>=8",
+  "ruff>=0.5",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/musicdna_encoder"]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "/.env",
+  "/.mypy_cache",
+  "/.pytest_cache",
+  "/.ruff_cache",
+  "/.venv",
+  "/cache",
+  "/dist",
+  "/node_modules",
+  "/System.Collections.Hashtable.out",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+cache-dir = "cache/ruff"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.ruff.format]
+line-ending = "lf"
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+cache_dir = "cache/mypy"
+files = ["src/musicdna_encoder"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.uv]
+default-groups = ["dev"]
+
+[dependency-groups]
+dev = [
+  "build>=1.2",
+  "mypy>=1.10",
+  "pytest>=8",
+  "ruff>=0.5",
+]
