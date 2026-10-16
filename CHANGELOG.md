@@ -4,7 +4,7 @@ All notable changes to MusicDNA-Encoder are documented here. The format
 follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this
 project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.9.0] — unreleased
+## [0.9.0] — 2026-09-15
 
 This is the first public, experimental release. The documented API and data
 contracts may change before version 1.0.
